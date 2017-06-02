@@ -2,6 +2,8 @@ FROM ros:indigo
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
+RUN sed -i 's/#precedence ::ffff:0:0\/96  100/precedence ::ffff:0:0\/96  100/g' /etc/gai.conf
+
 RUN apt-get update -qq \
     && apt-get -qq install --no-install-recommends -y apt-utils wget ca-certificates
 
