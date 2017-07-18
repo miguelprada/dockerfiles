@@ -1,4 +1,4 @@
-FROM nvidia_ros:kinetic
+FROM miguelprada/nvidia_ros:kinetic
 
 RUN apt-get update -qq \
     && apt-get -qq install --no-install-recommends -y \
