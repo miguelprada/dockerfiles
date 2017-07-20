@@ -1,0 +1,4 @@
+FROM ubuntu:trusty
+
+RUN echo 'Acquire::HTTP::Proxy "http://172.18.0.1:3142";' >> /etc/apt/apt.conf.d/01proxy \
+ && echo 'Acquire::HTTPS::Proxy "false";' >> /etc/apt/apt.conf.d/01proxy
