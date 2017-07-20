@@ -1,4 +1,5 @@
 FROM ubuntu:trusty
 
-RUN echo 'Acquire::HTTP::Proxy "http://172.18.0.1:3142";' >> /etc/apt/apt.conf.d/01proxy \
- && echo 'Acquire::HTTPS::Proxy "false";' >> /etc/apt/apt.conf.d/01proxy
+RUN apt-get update && apt-get install -y squid-deb-proxy-client && rm -rf /var/lib/apt/lists/*
+
+RUN echo 'Acquire::http::Proxy "http://172.18.0.1:8000";' > /etc/apt/apt.conf.d/30autoproxy
