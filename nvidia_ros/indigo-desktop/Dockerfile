@@ -1,7 +1,7 @@
-FROM miguelprada/nvidia_ros:kinetic-desktop
+FROM miguelprada/nvidia_ros:indigo
 
 RUN apt-get update -qq \
     && apt-get -qq install --no-install-recommends -y \
-        ros-$ROS_DISTRO-desktop-full \
+        ros-$ROS_DISTRO-desktop \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

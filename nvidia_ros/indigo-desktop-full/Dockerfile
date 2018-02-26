@@ -1,4 +1,4 @@
-FROM miguelprada/nvidia_ros:kinetic-desktop
+FROM miguelprada/nvidia_ros:indigo-desktop
 
 RUN apt-get update -qq \
     && apt-get -qq install --no-install-recommends -y \
